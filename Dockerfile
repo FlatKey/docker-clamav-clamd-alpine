@@ -8,6 +8,9 @@ RUN apk --no-cache add clamav clamav-libunrar \
 
 COPY config/ /etc/clamav/
 
+VOLUME /var/lib/clamav
+WORKDIR /var/lib/clamav
+
 EXPOSE 3310
 
 CMD ["clamd"]
